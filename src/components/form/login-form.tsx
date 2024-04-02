@@ -27,7 +27,7 @@ import { Button } from "@/components/ui/button";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
-import { login } from "@/lib/actions/auth-actions";
+import { login } from "@/lib/actions";
 import { toast } from "sonner";
 
 const LoginForm = () => {
@@ -48,6 +48,7 @@ const LoginForm = () => {
           toast.error(val.error);
         }
         toast.success(val.success!);
+        form.reset();
       });
     });
   };
